@@ -444,7 +444,8 @@
                     referee (n/string refer-node)]]
         (vswap! context update :refers assoc referee refered)
         (add-reference context scoped refer-node
-                       {:tags #{:refer}
+                       {:tags #{:declare :alias :refer}
+                        :ns full-ns
                         :sym refered})))))
 
 (defn add-libspecs [libtype context scoped entry-loc prefix-ns]
